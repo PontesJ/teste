@@ -1,18 +1,21 @@
-# Conning the Crypto Conman: End-to-End Analysis of Cryptocurrency-based Technical Support Scams
+# The Great Request Robbery: An Empirical Study of Client-side Request Hijacking Vulnerabilities on the Web
 
-Acharya, Bhupendra et al. "Conning the Crypto Conman: End-to-End Analysis of Cryptocurrency-based Technical Support Scams." IEEE Symposium on Security and Privacy (2024). DOI: <a href="https://ieeexplore.ieee.org/document/10646605">10.1109/SP54263.2024.00156</a>
+Khodayari, Soheil, Barber, Thomas, and Pellegrino, Giancarlo. "The Great Request Robbery: An Empirical Study of Client-side Request Hijacking Vulnerabilities on the Web." IEEE Symposium on Security and Privacy, 2024. DOI: <a href="https://ieeexplore.ieee.org/document/10646795">10.1109/SP54263.2024.00098</a>
 
 ## 1. Fichamento de Conteúdo
-O artigo "Conning the Crypto Conman: End-to-End Analysis of Cryptocurrency-based Technical Support Scams" explora como fraudes relacionadas a criptomoedas estão crescendo, especialmente aquelas que se utilizam de redes sociais para enganar usuários vulneráveis. O estudo se concentra em golpes que envolvem suporte técnico falso, onde fraudadores se apresentam como especialistas capazes de ajudar usuários a recuperar o acesso a suas carteiras digitais. Utilizando a ferramenta HoneyTweet, os autores atraíram mais de 9 mil fraudadores, criando perfis falsos no Twitter que simulavam usuários pedindo ajuda.<br>
-A pesquisa identificou duas abordagens principais utilizadas pelos criminosos: o roubo direto de frases de recuperação, que são usadas para obter controle total sobre as carteiras das vítimas, e a solicitação de pagamentos antecipados para serviços falsos de recuperação. O estudo também revelou que, embora o Twitter seja o ponto de partida para esses golpes, os criminosos rapidamente movem as interações para outras plataformas, como e-mail e Telegram, para evitar a detecção.<br>
-Além da análise quantitativa dos golpes, os autores testaram a eficácia dos métodos utilizados pelos fraudadores, criando carteiras digitais com chaves isca e verificando se os fundos eram roubados. Eles também colaboraram com o PayPal, que confirmou a existência de contas fraudulentas associadas às transações analisadas. O artigo conclui com sugestões para mitigar esse tipo de fraude, recomendando maior vigilância nas plataformas de mídia social e melhorias nas políticas de verificação de identidade, além de destacar a importância da educação dos usuários sobre os riscos de interagir com serviços de suporte técnico não verificados.
+
+O artigo "The Great Request Robbery" explora uma vulnerabilidade que vem crescendo conhecida como sequestro de requisições no lado do cliente, um problema que surge com a evolução das tecnologias de desenvolvimento web, como JavaScript. Tradicionalmente, ataques de falsificação de requisições ocorriam no lado do servidor, mas o estudo aborda como as falhas no lado do cliente agora permitem que atacantes manipulem requisições HTTP para seus próprios fins. Os autores introduzem a ferramenta Sheriff, que combina análise estática e dinâmica para detectar fluxos de dados vulneráveis a partir de entradas controladas por atacantes até APIs que enviam requisições.
+
+Com a Sheriff, os pesquisadores analisaram os 10 mil sites mais populares, descobrindo que 9,6% deles possuem vulnerabilidades exploráveis. A pesquisa identificou 10 variantes de vulnerabilidades de sequestro de requisições, sete das quais eram inéditas, incluindo vulnerabilidades em notificações push e WebSockets. Através de 67 provas de conceito, os autores demonstraram o impacto dessas vulnerabilidades, que vão desde a execução de código arbitrário até o vazamento de informações. Embora contramedidas como Content Security Policy (CSP) e Cross-Origin Opener Policy (COOP) ofereçam alguma proteção, a pesquisa mostra que elas são insuficientes para mitigar todas as variantes de ataques. O artigo conclui que, além de políticas de segurança mais robustas, os desenvolvedores precisam implementar melhores práticas de validação de entrada para evitar esses problemas no código do lado do cliente.
 
 ## 2. Fichamento Bibliográfico
-- **HoneyTweet**: Ferramenta usada para atrair fraudadores através de publicações automáticas no Twitter com pedidos de suporte técnico de carteiras digitais.
-- **Perfis de Fraudadores**: Os fraudadores foram categorizados com base nos métodos de pagamento e na forma como enganavam as vítimas.
-- **Ciclo de Vida da Fraude**: O estudo revelou o ciclo completo de uma fraude, desde o primeiro contato com a vítima até a coleta dos dados.
+- **Sheriff**: Ferramenta desenvolvida para detectar fluxos de dados vulneráveis no código cliente.
+- **Sequestro de Requisições no Cliente**: Nova categoria de ataques que explora falhas na validação de entrada no lado do cliente.
+- **Vulnerabilidade**: 9,6% dos sites analisados apresentaram vulnerabilidades desse tipo.
+- **Provas de Conceito**: 67 provas de conceito foram criadas para demonstrar a exploração das vulnerabilidades encontradas.
+- **Contramedidas**: O estudo analisa a eficácia de medidas como CSP e COOP, destacando suas limitações.
 
 ## 3. Fichamento de Citações
-- _"Through HoneyTweet, we lure over 9K scammers in three months and track their footprints across six social media platforms."_
-- _"Scammers use Twitter as a starting point for the fraud, after which they pivot to other social media platforms."_
-- _"We validate our findings by sharing information with PayPal, which confirmed the fraudulent activities."_
+- _"We conducted the first evaluation of client-side request hijacking vulnerabilities in the wild, covering the attack surface, the prevalence, and the impact of these vulnerabilities."_
+- _"Our study shows that 9.6% of the top 10K websites are vulnerable to client-side request hijacking."_
+- _"Sheriff uncovered 202K vulnerable data flows across 17.9K webpages, with 49 of these websites being manually confirmed as exploitable."_
